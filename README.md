@@ -161,10 +161,8 @@ override fun onDestroy() {
     Log.d(TAG, "Entro en el estado destruido")
 }
 ```
-![onDestroy](https://github.com/JorgeGonzalez-castelao/Tiempo_Activa_REC/assets/113522749/f5a95441-d727-4a48-abac-c426166715ee)
-
 - Se registra un mensaje de depuración utilizando `Log.d()`.
-
+![onDestroy](https://github.com/JorgeGonzalez-castelao/Tiempo_Activa_REC/assets/113522749/f5a95441-d727-4a48-abac-c426166715ee)
 ---
 
 Este proyecto fue creado por Jorge Gonzalez Ruiz 
