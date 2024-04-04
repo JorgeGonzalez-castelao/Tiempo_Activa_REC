@@ -41,6 +41,13 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+    override fun onStart(){
+        super.onStart()
+        // Obtener el tiempo de inicio de la actividad
+        timeStart=System.currentTimeMillis()
+        // Registro de mensaje de depuración
+        Log.d(TAG,"He llegado al Start")
+    }
 
     @Composable
     fun Greeting(name: String, modifier: Modifier = Modifier) {
