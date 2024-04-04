@@ -58,6 +58,26 @@ class MainActivity : ComponentActivity() {
         updateUI()
     }
 
+    override fun onPause() {
+        super.onPause()
+        // Obtener el tiempo de finalización de la actividad
+        timeFinish=System.currentTimeMillis()
+        // Calcular el tiempo transcurrido y agregarlo al tiempo total pasado en la actividad
+        timePassed+=((timeFinish-timeStart)*0.001).toLong()
+        // Registro de mensaje de depuración con el tiempo total pasado en la actividad
+        Log.d(TAG,"Tiempo que ha estado en ejecucion: "+timePassed+" segundos")
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        // Registro de mensaje de depuración
+        Log.d(TAG,"Entro en el estado destruido")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        // Registro de mensaje de depuración
+        Log.d(TAG,"Entro en el estado pausado")
+    }
     // Método para mostrar un mensaje de Toast con el tiempo total pasado en la actividad
     fun updateUI(){
         Toast.makeText(this,"Tiempo de activacion: $timePassed segundos",Toast.LENGTH_SHORT).show()
@@ -72,4 +92,3 @@ class MainActivity : ComponentActivity() {
             modifier = modifier
         )
     }
-}
