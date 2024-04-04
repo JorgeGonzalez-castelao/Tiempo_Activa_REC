@@ -41,6 +41,7 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+
     override fun onStart(){
         super.onStart()
         // Obtener el tiempo de inicio de la actividad
@@ -48,6 +49,20 @@ class MainActivity : ComponentActivity() {
         // Registro de mensaje de depuración
         Log.d(TAG,"He llegado al Start")
     }
+
+    override fun onResume() {
+        super.onResume()
+        // Registro de mensaje de depuración
+        Log.d(TAG,"He llegado al Resume")
+        // Actualizar la interfaz de usuario
+        updateUI()
+    }
+
+    // Método para mostrar un mensaje de Toast con el tiempo total pasado en la actividad
+    fun updateUI(){
+        Toast.makeText(this,"Tiempo de activacion: $timePassed segundos",Toast.LENGTH_SHORT).show()
+    }
+}
 
     @Composable
     fun Greeting(name: String, modifier: Modifier = Modifier) {
